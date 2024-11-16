@@ -19,8 +19,8 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: p2di_left
+    shield: P2DI_left
   - board: nice_nano_v2
-    shield: p2di_right
+    shield: P2DI_right
   - board: nice_nano_v2
     shield: settings_reset
