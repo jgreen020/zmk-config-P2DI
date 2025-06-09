@@ -1,0 +1,201 @@
+units:
+  cx: 18-0.5
+  p: 0.5
+  px: cx+p
+  py: cy+p
+  l: 2
+  lx: cx+l
+  ly: cy+l
+  f: 1
+  wall: 3.25+2.5+f
+  thumbdown: 3*py/4+py/2
+
+points:
+  zones:
+    matrix:
+      anchor:
+        shift: [0, 0]
+      key: 
+        spread: px
+        padding: py
+        splay: 0
+      columns:
+        pinky:
+          key:
+            stagger: 0
+            column_net: P022
+        ring:
+          key:
+            stagger: py
+            column_net: P100
+        middle:
+          key:
+            stagger: py/4
+            column_net: P010
+        index:
+          key:
+            stagger: -py/4
+            column_net: P111
+        inner:
+          key:
+            stagger: -py/4
+            column_net: P113
+      rows:
+        bottom:
+          row_net: P024
+        home:
+          row_net: P020
+        top:
+          row_net: P017
+    thumb:
+      key:
+        spread: px
+        splay: 0
+        stagger: -py/4
+      anchor:
+        ref: matrix_middle_bottom
+        shift: [0,-thumbdown]
+        rotate: 0
+      columns:
+        first:
+          key:
+            column_net: P010
+        second:
+          key:
+            column_net: P111
+        third:
+          key:
+            column_net: P113
+      rows.only.row_net: P106
+outlines:
+  keys:
+    - what: rectangle
+      where: true
+      size: [14,14]
+  caps:
+    - what: rectangle
+      where: true
+      size: [cx,cy]
+  raw:
+    - what: rectangle
+      where: true
+      size: [lx,ly]
+  final:
+    - name: raw
+    - what: rectangle 
+      where: matrix_middle_bottom
+      adjust.shift: [0, -.75px]
+      size: [5*px+l-.5, 2py+l] 
+      operation: add
+  preview:
+    - name: final
+    - operation: subtract
+      name: keys
+  switchplate:
+    - expand: wall
+      name: final
+      joints: 0 
+    - operation: subtract
+      name: keys
+  topplate:
+    - expand: f
+      name: final
+      operation: stack
+    - operation: stack
+      name: switchplate
+    - operation: stack
+      name: raw
+
+ 
+pcbs:
+  P2DI:
+    outlines:
+      main:
+        outline: final
+    footprints:
+      choc_hotswap:
+        what: choc
+        where: true
+        params:
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+          keycaps: true
+          reverse: true
+          hotswap: true
+      nicenano:
+        what: nice_nano
+        where:
+            ref: matrix_pinky_bottom
+            shift: [7.8, 3.5]
+            rotate: 0
+        params:
+          orientation: down
+      diode:
+        what: diodesm
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [-8, -1]
+          rotate: 90
+      reset:
+        what: EVQPUC
+        params: 
+          side: B
+          from: GND
+          to: RST 
+        where:
+          ref.aggregate.parts: [matrix_ring_bottom, matrix_pinky_home]
+          shift: [-5, -1.5py+.5]
+          rotate: 180
+      reset2:
+        what: EVQPUC
+        params: 
+          side: F
+          from: GND
+          to: RST 
+        where:
+          ref.aggregate.parts: [matrix_ring_bottom, matrix_pinky_home]
+          shift: [-5, -1.5py+.5]
+          rotate: 180
+      battery:
+        what: jstph
+        params:
+          side: 'B'
+          pos: pos
+          neg: GND
+        where:
+          ref.aggregate.parts: [matrix_middle_bottom, thumb_first_only]
+          shift: [2, 0]
+          rotate: 270
+      battery2:
+        what: jstph
+        params:
+          side: 'F'
+          pos: pos
+          neg: GND
+        where:
+          ref.aggregate.parts: [matrix_middle_bottom, thumb_first_only]
+          shift: [-2, 0]
+          rotate: 90
+      battery_switch:
+        what: slider
+        where:
+          ref.aggregate.parts: [matrix_ring_bottom, matrix_pinky_home]
+          shift: [5, -1.5py+.5]
+          rotate: 180
+        params:
+          side: B
+          from: pos
+          to: RAW
+      battery_switch2:
+        what: slider
+        where:
+          ref.aggregate.parts: [matrix_ring_bottom, matrix_pinky_home]
+          shift: [5, -1.5py+.5]
+          rotate: 180
+        params:
+            side: F
+            from: pos
+            to: RAW
