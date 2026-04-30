@@ -24,46 +24,46 @@
 
         letters {
             bindings = <
-&lt 1 Q      &kp W  &kp E          &kp R               &kp T                    &kp Y             &kp U      &kp I      &kp O    &kp P                 
-&lt 3 A      &kp S  &kp D          &kp F               &kp G                    &kp H             &kp J      &kp K      &kp L    &lt 3 SEMI            
-&mt RSHFT Z  &kp X  &kp C          &kp V               &kp B                    &kp N             &kp M      &kp COMMA  &kp DOT  &mt RIGHT_SHIFT FSLH  
-                    &mt LCTRL ESC  &mt LALT BACKSPACE  &mt LGUI SPACE           &mt LSHIFT SPACE  &lt 1 RET  &lt 2 TAB
+&lt 1 Q      &kp W  &kp E          &kp R               &kp T             &kp Y             &kp U      &kp I      &kp O    &kp P
+&lt 3 A      &kp S  &kp D          &kp F               &kp G             &kp H             &kp J      &kp K      &kp L    &lt 3 SEMI
+&mt RSHFT Z  &kp X  &kp C          &kp V               &kp B             &kp N             &kp M      &kp COMMA  &kp DOT  &mt RIGHT_SHIFT FSLH
+                    &mt LCTRL ESC  &mt LALT BACKSPACE  &mt LGUI SPACE    &mt LSHIFT SPACE  &lt 1 RET  &lt 2 TAB
             >;
         };
 
         numbers {
             bindings = <
-&kp GRAVE       &none   &kp LPAR          &kp RPAR           &none              &kp N7  &kp N8  &kp N9    &kp MINUS  &kp EQUAL  
-&trans          &none   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none              &kp N4  &kp N5  &kp N6    &kp APOS   &kp BSLH   
-&kp LEFT_SHIFT  &none   &kp LEFT_BRACE    &kp RIGHT_BRACE    &none              &kp N1  &kp N2  &kp N3    &kp DOT    &kp RSHFT  
-                        &trans            &trans             &trans             &trans  &trans  &lt 2 N0
+&kp GRAVE       &none  &kp LPAR          &kp RPAR           &none     &kp N7  &kp N8  &kp N9    &kp MINUS  &kp EQUAL
+&trans          &none  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none     &kp N4  &kp N5  &kp N6    &kp APOS   &kp BSLH
+&kp LEFT_SHIFT  &none  &kp LEFT_BRACE    &kp RIGHT_BRACE    &none     &kp N1  &kp N2  &kp N3    &kp DOT    &kp RSHFT
+                       &trans            &trans             &trans    &trans  &trans  &lt 2 N0
             >;
         };
 
         symbols_bluetooth {
             bindings = <
-&kp TILDE               &none   &none   &none   &degree         &kp AMPS         &kp STAR     &kp LPAR   &kp UNDER          &kp PLUS    
-&none                   &none   &none   &none   &none           &kp DOLLAR       &kp PERCENT  &kp CARET  &kp DOUBLE_QUOTES  &kp PIPE    
-&mt LSHIFT CAPSLOCK     &none   &none   &none   &none           &kp EXCLAMATION  &kp AT       &kp HASH   &kp DOT            &kp RSHIFT  
-                                &trans  &trans  &trans          &trans           &trans       &trans
+&kp TILDE            &kp INS  &kp HOME  &kp PG_UP  &kp PAUSE_BREAK    &kp AMPS         &kp STAR     &kp LPAR   &kp UNDER          &kp PLUS
+&none                &kp DEL  &kp END   &kp PG_DN  &kp PRINTSCREEN    &kp DOLLAR       &kp PERCENT  &kp CARET  &kp DOUBLE_QUOTES  &kp PIPE
+&mt LSHIFT CAPSLOCK  &none    &none     &none      &none              &kp EXCLAMATION  &kp AT       &kp HASH   &kp DOT            &kp RSHIFT
+                              &trans    &trans     &trans             &trans           &trans       &trans
             >;
         };
 
         navigation {
             bindings = <
-&none  &none    &kp UP    &kp TAB                   &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS           &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS       &kp UP    &none     &none       &none
-&none  &kp LEFT &kp DOWN  &kp RIGHT                 &kp ENTER                                   &kp C_AC_SEARCH                         &kp LEFT  &kp DOWN  &kp RIGHT   &trans  
-&none  &kp X    &kp C     &kp V                     &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS      &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &none     &none     &none       &none   
-                &trans    &mt LEFT_SHIFT BACKSPACE  &trans                                      &trans                                  &trans    &trans
+&kp Q  &none     &kp UP    &kp TAB    &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS         &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS       &none     &kp UP    &none      &none
+&none  &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER                                 &kp C_AC_SEARCH                         &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+&none  &kp X     &kp C     &kp V      &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS    &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &none     &none     &none      &none
+                 &trans    &trans     &trans                                    &trans                                  &trans    &trans
             >;
         };
 
         functions {
             bindings = <
-&kp F1  &kp F2   &kp F3   &kp F4   &bt BT_SEL 0         &bt BT_SEL 3  &kp C_VOL_UP  &kp C_NEXT  &kp C_BRI_UP  &kp LA(LG(DELETE))  
-&kp F5  &kp F6   &kp F7   &kp F8   &bt BT_SEL 1         &bt BT_SEL 4  &kp C_VOL_DN  &kp C_PP    &kp C_BRI_DN  &kp PRINTSCREEN     
-&kp F9  &kp F10  &kp F11  &kp F12  &bt BT_SEL 2         &bt BT_CLR    &kp C_MUTE    &kp C_PREV  &kp C_PWR     &kp LC(LA(DELETE))          
-                 &trans   &trans   &trans               &trans        &trans        &trans
+&kp F1  &kp F2   &kp F3   &kp F4   &bt BT_SEL 0    &bt BT_SEL 3  &kp C_VOL_UP  &kp C_NEXT  &kp C_BRI_UP  &kp LA(LG(DELETE))
+&kp F5  &kp F6   &kp F7   &kp F8   &bt BT_SEL 1    &bt BT_SEL 4  &kp C_VOL_DN  &kp C_PP    &kp C_BRI_DN  &kp C_PIP
+&kp F9  &kp F10  &kp F11  &kp F12  &bt BT_SEL 2    &bt BT_CLR    &kp C_MUTE    &kp C_PREV  &kp C_PWR     &kp LC(LA(DELETE))
+                 &trans   &trans   &trans          &trans        &trans        &trans
             >;
         };
     };
