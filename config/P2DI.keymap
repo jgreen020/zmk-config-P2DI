@@ -51,7 +51,7 @@
 
         navigation {
             bindings = <
-&none  &none     &kp UP    &kp TAB    &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS         &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS       &none     &kp UP    &none      &none
+&kp Q  &none     &kp UP    &kp TAB    &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS         &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS       &none     &kp UP    &none      &none
 &none  &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER                                 &kp C_AC_SEARCH                         &kp LEFT  &kp DOWN  &kp RIGHT  &trans
 &none  &kp X     &kp C     &kp V      &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS    &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &none     &none     &none      &none
                  &trans    &trans     &trans                                    &trans                                  &trans    &trans
